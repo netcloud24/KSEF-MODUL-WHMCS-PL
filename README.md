@@ -10,6 +10,15 @@ Projekt został stworzony przez <strong>NETCLOUD24.COM / Łukasz Bodziony</stron
 <strong>w 100% darmowy dla wszystkich</strong> — zarówno do użytku prywatnego, jak i komercyjnego.
 </p>
 
+<h2>📸 Panel modułu KSeF w WHMCS</h2>
+
+<p align="center">
+  <img src="https://raw.githubusercontent.com/netcloud24/KSEF-MODUL-WHMCS-PL/main/1.png" width="1000">
+</p>
+
+<p align="center">
+  Widok konfiguracji modułu, zarządzania tokenem oraz statusami faktur KSeF
+</p>
 <p>
 Możesz go dowolnie używać, modyfikować i wdrażać u klientów bez żadnych opłat licencyjnych.
 </p>
