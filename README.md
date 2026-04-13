@@ -1,109 +1,103 @@
 <h1>KSEF-MODUL-WHMCS-PL</h1>
 
 <p>
-<strong>Darmowy moduł KSeF dla WHMCS</strong> w języku polskim, udostępniony publicznie jako projekt open source.
+<strong>Darmowy moduł KSeF dla WHMCS</strong> w języku polskim, umożliwiający pełną integrację z 
+<strong>Krajowym Systemem e-Faktur (KSeF – Ministerstwo Finansów)</strong>.
 </p>
 
 <p>
-Projekt został stworzony przez <strong>NETCLOUD24.COM / Łukasz Bodziony</strong> i jest <strong>całkowicie bezpłatny dla wszystkich</strong> — zarówno do użytku prywatnego, jak i komercyjnego.
+Projekt został stworzony przez <strong>NETCLOUD24.COM / Łukasz Bodziony</strong> i jest 
+<strong>w 100% darmowy dla wszystkich</strong> — zarówno do użytku prywatnego, jak i komercyjnego.
 </p>
 
 <p>
-Możesz go używać w swojej firmie, wdrażać u klientów, modyfikować oraz rozwijać według własnych potrzeb — bez opłat licencyjnych.
+Możesz go dowolnie używać, modyfikować i wdrażać u klientów bez żadnych opłat licencyjnych.
 </p>
 
 <p>
-👉 <strong>Serwery pod WHMCS / KSeF:</strong><br>
-<a href="https://netcloud24.com" target="_blank">
-</a>
+👉 Infrastruktura pod WHMCS i KSeF:
 </p>
+
+<ul>
+<li><a href="https://netcloud24.com/" target="_blank">VPS Windows</a></li>
+<li><a href="https://netcloud24.com/serwer-vps/" target="_blank">Serwery VPS Linux</a></li>
+<li><a href="https://netcloud24.com/hosting/" target="_blank">Hosting WWW</a></li>
+</ul>
 
 <hr>
 
-<h2>📌 Czym jest ten moduł</h2>
+<h2>📌 Opis projektu</h2>
 
 <p>
-KSEF-MODUL-WHMCS-PL to kompletny system integracji WHMCS z Krajowym Systemem e-Faktur (KSeF), który umożliwia automatyczne i ręczne przesyłanie faktur do systemu Ministerstwa Finansów.
+KSEF-MODUL-WHMCS-PL to kompletny moduł integracyjny, który pozwala automatycznie wysyłać faktury z WHMCS do KSeF.
 </p>
 
 <p>
-Został zaprojektowany tak, aby maksymalnie uprościć wdrożenie KSeF w firmach korzystających z WHMCS — bez konieczności pisania własnych integracji, bez kombinowania z API i bez ręcznej obsługi faktur.
+Został zaprojektowany w taki sposób, aby wdrożenie było maksymalnie proste — bez konieczności pisania własnej integracji,
+bez znajomości API KSeF i bez użycia podpisu kwalifikowanego.
 </p>
 
 <p>
-Moduł działa w pełni niezależnie od core WHMCS i wykorzystuje oficjalne API KSeF oraz autoryzację tokenem Ministerstwa Finansów.
+Moduł wykorzystuje <strong>oficjalne API KSeF</strong> oraz autoryzację tokenem Ministerstwa Finansów.
 </p>
 
 <p>
-Dzięki temu możesz w ciągu kilku minut przejść od braku integracji do pełnej automatyzacji wysyłki faktur zgodnie z wymogami KSeF.
+Dzięki temu możesz w kilka minut uruchomić pełną automatyzację fakturowania zgodną z wymogami KSeF.
 </p>
 
 <hr>
 
 <h2>💸 100% darmowy</h2>
 
-<p>
-Ten moduł jest:
-</p>
-
 <ul>
-<li>✔ darmowy do użytku prywatnego</li>
-<li>✔ darmowy do użytku komercyjnego</li>
-<li>✔ darmowy dla firm hostingowych</li>
-<li>✔ darmowy dla wdrożeń u klientów</li>
-<li>✔ open source – możesz go rozwijać</li>
+<li>✔ brak opłat licencyjnych</li>
+<li>✔ brak abonamentu</li>
+<li>✔ brak ograniczeń</li>
+<li>✔ open source</li>
+<li>✔ do użytku komercyjnego</li>
 </ul>
 
 <p>
-Nie ma żadnych ukrytych opłat, subskrypcji ani licencji.
-</p>
-
-<p>
-To świadoma decyzja — zamiast sprzedawać moduł, projekt ma budować ekosystem i ułatwiać wdrożenia KSeF.
+Projekt powstał jako narzędzie dla społeczności WHMCS i firm wdrażających KSeF.
 </p>
 
 <hr>
 
 <h2>🚀 Funkcjonalność</h2>
 
-<p>Moduł oferuje kompletny zestaw funkcji produkcyjnych:</p>
-
 <ul>
-<li>pełna konfiguracja z panelu WHMCS</li>
+<li>konfiguracja z panelu WHMCS</li>
 <li>obsługa trybu test i production</li>
-<li>integracja z API KSeF</li>
-<li>autoryzacja tokenem Ministerstwa Finansów</li>
-<li>automatyczne kolejkowanie faktur po statusie Paid</li>
-<li>cron do przetwarzania i wysyłki</li>
-<li>obsługa statusów faktur</li>
+<li>autoryzacja tokenem MF</li>
+<li>automatyczne kolejkowanie faktur (Paid)</li>
+<li>cron do wysyłki</li>
+<li>statusy: new / processing / sent / error</li>
 <li>zapis numeru KSeF</li>
 <li>zapis XML faktury</li>
-<li>zapis UPO (urzędowe potwierdzenie odbioru)</li>
+<li>zapis UPO</li>
 <li>blokada duplikatów</li>
-<li>logika retry i kontrola błędów</li>
-<li>panel podglądu wysyłek</li>
+<li>panel historii wysyłek</li>
 </ul>
 
 <hr>
 
-<h2>🔑 Autoryzacja – token Ministerstwa Finansów</h2>
+<h2>🔑 Autoryzacja (Token KSeF – Ministerstwo Finansów)</h2>
 
 <p>
-Moduł wykorzystuje <strong>oficjalny token KSeF</strong> generowany w systemie Ministerstwa Finansów.
+Moduł działa wyłącznie na <strong>tokenie KSeF</strong> generowanym w systemie MF.
 </p>
 
 <p>
-Nie jest wymagany:
+Nie wymagane:
 </p>
 
 <ul>
 <li>podpis kwalifikowany</li>
 <li>certyfikat</li>
-<li>profil zaufany</li>
 </ul>
 
 <p>
-Token generujesz tutaj:
+Generowanie tokenu:
 </p>
 
 <ul>
@@ -112,7 +106,7 @@ Token generujesz tutaj:
 </ul>
 
 <p>
-Token ma postać:
+Format tokenu:
 </p>
 
 <pre>
@@ -122,66 +116,83 @@ Token ma postać:
 <p><strong>Ważne:</strong></p>
 
 <ul>
-<li>token jest powiązany z NIP-em</li>
-<li>token testowy działa tylko w trybie test</li>
-<li>token produkcyjny działa tylko w production</li>
+<li>token musi pasować do trybu (test / production)</li>
 <li>NIP musi być zgodny z tokenem</li>
 </ul>
 
 <hr>
 
-<h2>⚡ Instalacja (bardzo prosta)</h2>
+<h2>📦 Composer / vendor (KLUCZOWE)</h2>
 
-<p>Podmień dane:</p>
+<p>
+Moduł korzysta z bibliotek PHP (guzzle, ksef-client).
+</p>
+
+<p>
+✔ W paczce <strong>ksefmodule-full-deploy.tar.gz</strong> katalog <strong>vendor</strong> jest już zawarty  
+➡️ NIE trzeba używać composera
+</p>
+
+<p>
+✔ Jeśli instalujesz ręcznie:
+</p>
 
 <pre>
-USER=twoj_user
-WHMCS_PATH=/home/USER/domains/twojadomena.pl/public_html
+cd modules/addons/ksefmodule
+composer install
 </pre>
 
-<p><strong>Krok 1:</strong></p>
+<p>
+❌ Brak vendor = moduł NIE zadziała
+</p>
+
+<hr>
+
+<h2>⚡ Instalacja (2 minuty)</h2>
 
 <pre>
 cd /home/USER/domains/twojadomena.pl/public_html
-</pre>
 
-<p><strong>Krok 2:</strong></p>
-
-<pre>
 wget https://github.com/netcloud24/KSEF-MODUL-WHMCS-PL/raw/main/ksefmodule-full-deploy.tar.gz
-</pre>
 
-<p><strong>Krok 3:</strong></p>
-
-<pre>
 tar -xzvf ksefmodule-full-deploy.tar.gz --strip-components=1
-</pre>
 
-<p><strong>Krok 4:</strong></p>
-
-<pre>
 chown -R USER:USER modules/addons/ksefmodule
 chmod -R 755 modules/addons/ksefmodule
 
 chown USER:USER includes/hooks/ksefmodule.php
 chmod 644 includes/hooks/ksefmodule.php
-</pre>
 
-<p><strong>Krok 5:</strong></p>
-
-<pre>
 rm -rf templates_c/*
 </pre>
 
-<p><strong>Krok 6:</strong></p>
+<p>
+Aktywacja:
+</p>
 
-<p>System Settings → Addon Modules → Activate</p>
+<p>
+System Settings → Addon Modules → Activate
+</p>
 
-<p><strong>Krok 7:</strong></p>
+<hr>
 
-<p>Wprowadź NIP, token, dane firmy i kliknij Test połączenia</p>
+<h2>⚙️ Konfiguracja</h2>
 
-<p><strong>Krok 8 (cron):</strong></p>
+<ul>
+<li>NIP</li>
+<li>Token KSeF</li>
+<li>Nazwa firmy</li>
+<li>Adres</li>
+<li>Tryb (test / production)</li>
+</ul>
+
+<p>
+Kliknij: <strong>Test połączenia</strong>
+</p>
+
+<hr>
+
+<h2>⏱ Cron</h2>
 
 <pre>
 */5 * * * * php /home/USER/domains/twojadomena.pl/public_html/modules/addons/ksefmodule/cron/ksef_status.php
@@ -189,38 +200,37 @@ rm -rf templates_c/*
 
 <hr>
 
-<h2>🔄 Jak działa system</h2>
+<h2>🔄 Jak działa</h2>
 
 <ol>
-<li>Faktura WHMCS → status Paid</li>
+<li>Faktura → Paid</li>
 <li>Dodanie do kolejki</li>
 <li>Cron wysyła do KSeF</li>
 <li>KSeF nadaje numer</li>
-<li>Zapis XML + UPO + status</li>
+<li>Zapis XML + UPO</li>
 </ol>
 
 <hr>
 
-<h2>🔒 Stabilność i bezpieczeństwo</h2>
+<h2>🔒 Stabilność</h2>
 
 <ul>
-<li>brak duplikacji faktur</li>
-<li>kontrola statusów</li>
+<li>brak duplikatów</li>
 <li>kolejka przetwarzania</li>
 <li>retry błędów</li>
-<li>pełna kontrola z panelu</li>
+<li>kontrola statusów</li>
 </ul>
 
 <hr>
 
-<h2>🎯 Dla kogo jest ten moduł</h2>
+<h2>🎯 Zastosowanie</h2>
 
 <ul>
-<li>firmy hostingowe (WHMCS)</li>
+<li>firmy hostingowe</li>
+<li>WHMCS</li>
 <li>SaaS</li>
 <li>software house</li>
 <li>biura księgowe</li>
-<li>integratorzy systemów</li>
 </ul>
 
 <hr>
@@ -228,17 +238,18 @@ rm -rf templates_c/*
 <h2>👨‍💻 Autor</h2>
 
 <p>
-<strong>NETCLOUD24.COM / Łukasz Bodziony</strong><br><br>
-
-👉 <a href="https://netcloud24.com/" target="_blank">
-VPS Windows 
-</a>
+<strong>NETCLOUD24.COM / Łukasz Bodziony</strong>
 </p>
+
+<p>
+👉 Oferta:
+</p>
+
+<ul>
+<li><a href="https://netcloud24.com/">VPS Windows</a></li>
+<li><a href="https://netcloud24.com/serwer-vps/">VPS Linux</a></li>
+<li><a href="https://netcloud24.com/hosting/">Hosting WWW</a></li>
+</ul>
 
 <hr>
 
-<h2>📌 Licencja</h2>
-
-<p>
-Projekt open source – zalecana licencja MIT lub GPL.
-</p>
