@@ -1,65 +1,63 @@
-# KSEF-MODUL-WHMCS-PL
+<h1>KSEF-MODUL-WHMCS-PL</h1>
 
-Darmowy moduł **KSeF dla WHMCS** w języku polskim.  
-Integracja z **Krajowym Systemem e-Faktur** obejmująca:
+<p>
+Darmowy moduł <strong>KSeF dla WHMCS</strong> w języku polskim.<br>
+Integracja z <strong>Krajowym Systemem e-Faktur</strong> obejmująca:
+</p>
 
-- konfigurację z panelu administratora WHMCS,
-- ręczną wysyłkę faktur WHMCS do KSeF,
-- automatyczne kolejkowanie faktur ze statusem **Paid**,
-- obsługę statusów wysyłki,
-- integrację z cronem,
-- zapis numeru KSeF,
-- zapis XML i UPO.
+<ul>
+<li>konfigurację z panelu administratora WHMCS,</li>
+<li>ręczną wysyłkę faktur WHMCS do KSeF,</li>
+<li>automatyczne kolejkowanie faktur ze statusem <strong>Paid</strong>,</li>
+<li>obsługę statusów wysyłki,</li>
+<li>integrację z cronem,</li>
+<li>zapis numeru KSeF,</li>
+<li>zapis XML i UPO.</li>
+</ul>
 
-Projekt przygotowany przez **NETCLOUD24.COM / Łukasz Bodziony**.
+<p>
+Projekt przygotowany przez <strong>NETCLOUD24.COM / Łukasz Bodziony</strong>.
+</p>
 
----
+<p>
+👉 <strong>Sprawdź wydajne serwery pod WHMCS:</strong><br>
+<a href="https://netcloud24.com" target="_blank">
+https://netcloud24.com/
+</a>
+</p>
 
-## Funkcje modułu
+<hr>
 
-Moduł umożliwia:
+<h2>🚀 Funkcje modułu</h2>
 
-- konfigurację KSeF bezpośrednio z panelu WHMCS,
-- zapis:
-  - trybu `test` / `production`,
-  - NIP sprzedawcy,
-  - tokenu KSeF,
-  - pełnych danych adresowych firmy,
-  - waluty domyślnej,
-  - ustawień crona,
-- test połączenia z KSeF,
-- ręczne dodanie faktury WHMCS do kolejki wysyłki,
-- listę faktur WHMCS ze statusem **Paid**, gotowych do wysłania,
-- listę ostatnich wysyłek z informacją o:
-  - statusie,
-  - numerze KSeF,
-  - NIP nabywcy,
-  - komunikacie błędu,
-- integrację z hookiem `InvoicePaid`,
-- przetwarzanie kolejki przez cron,
-- blokadę duplikatów wysyłki.
+<ul>
+<li>konfiguracja KSeF z panelu WHMCS,</li>
+<li>obsługa trybu test / production,</li>
+<li>automatyczna kolejka faktur,</li>
+<li>integracja z hookiem InvoicePaid,</li>
+<li>cron do wysyłki faktur,</li>
+<li>zapis XML, UPO i numeru KSeF,</li>
+<li>blokada duplikatów wysyłki,</li>
+<li>lista faktur gotowych do wysłania,</li>
+<li>logi i statusy operacji.</li>
+</ul>
 
----
+<hr>
 
-## Wymagania
+<h2>⚙️ Wymagania</h2>
 
-Przed instalacją upewnij się, że serwer spełnia wymagania:
+<ul>
+<li>WHMCS 8 / 9</li>
+<li>PHP 8.1+</li>
+<li>token KSeF</li>
+<li>dostęp do API KSeF</li>
+</ul>
 
-- WHMCS 8/9
-- PHP 8.1 lub nowsze
-- aktywny dostęp do KSeF
-- poprawny token KSeF
-- moduł działa z biblioteką:
-  - `n1ebieski/ksef-php-client`
-  - `guzzlehttp/guzzle`
+<hr>
 
----
+<h2>📁 Struktura modułu</h2>
 
-## Struktura modułu
-
-Po instalacji katalog modułu powinien wyglądać tak:
-
-BASH
+<pre>
 modules/addons/ksefmodule/
 ├── ksefmodule.php
 ├── vendor/
@@ -70,87 +68,128 @@ modules/addons/ksefmodule/
 └── cron/
     └── ksef_status.php
 
+includes/hooks/ksefmodule.php
+</pre>
 
-Szybka instalacja (kopiuj i wklej)
+<hr>
 
-Instalacja modułu zajmuje około 2–3 minut. Wystarczy wykonać poniższe kroki na serwerze, gdzie działa WHMCS.
+<h2>⚡ Szybka instalacja</h2>
 
-Na początku podmień wartości:
+<p>Podmień dane:</p>
 
+<pre>
 USER=twoj_user
 WHMCS_PATH=/home/USER/domains/twojadomena.pl/public_html
+</pre>
 
-Krok 1 — przejdź do katalogu WHMCS:
+<h3>1. Wejdź do katalogu WHMCS</h3>
 
+<pre>
 cd /home/USER/domains/twojadomena.pl/public_html
+</pre>
 
-Krok 2 — pobierz moduł z GitHub:
+<h3>2. Pobierz moduł</h3>
 
+<pre>
 wget https://github.com/netcloud24/KSEF-MODUL-WHMCS-PL/raw/main/ksefmodule-full-deploy.tar.gz
+</pre>
 
-Krok 3 — rozpakuj paczkę:
+<h3>3. Rozpakuj</h3>
 
+<pre>
 tar -xzvf ksefmodule-full-deploy.tar.gz --strip-components=1
+</pre>
 
-Po tym kroku pliki automatycznie trafią do odpowiednich katalogów:
+<h3>4. Uprawnienia</h3>
 
-modules/addons/ksefmodule
-includes/hooks/ksefmodule.php
-
-Krok 4 — ustaw uprawnienia:
-
+<pre>
 chown -R USER:USER modules/addons/ksefmodule
 chmod -R 755 modules/addons/ksefmodule
 
 chown USER:USER includes/hooks/ksefmodule.php
 chmod 644 includes/hooks/ksefmodule.php
+</pre>
 
-Krok 5 — wyczyść cache WHMCS:
+<h3>5. Cache</h3>
 
+<pre>
 rm -rf templates_c/*
+</pre>
 
-Krok 6 — aktywuj moduł:
+<h3>6. Aktywacja</h3>
 
-Zaloguj się do panelu WHMCS i przejdź do:
+<p>
 System Settings → Addon Modules → KSeF Module → Activate
+</p>
 
-Krok 7 — konfiguracja:
+<h3>7. Konfiguracja</h3>
 
-W module uzupełnij:
+<ul>
+<li>NIP</li>
+<li>Token KSeF</li>
+<li>Nazwa firmy</li>
+<li>Adres</li>
+<li>Tryb (test / production)</li>
+</ul>
 
-NIP sprzedawcy
-Token KSeF
-Nazwę firmy i adres
-Tryb (test lub production)
+<p>Kliknij: <strong>Test połączenia</strong></p>
 
-Następnie kliknij „Test połączenia”.
+<h3>8. Cron</h3>
 
-Krok 8 — dodaj cron:
-
-Dodaj do crona (podmień ścieżkę):
-
+<pre>
 */5 * * * * php /home/USER/domains/twojadomena.pl/public_html/modules/addons/ksefmodule/cron/ksef_status.php
+</pre>
 
-Jak to działa
+<hr>
 
-Po poprawnej konfiguracji:
+<h2>🔄 Jak to działa</h2>
 
-Faktura w WHMCS otrzymuje status Paid
-Moduł dodaje ją do kolejki
-Cron wysyła ją do KSeF
-System zapisuje:
-numer KSeF
-XML
-UPO
-status operacji
-Wymagania
-klient w WHMCS musi mieć uzupełniony NIP
-token KSeF musi odpowiadać trybowi (test / production)
-Bezpieczeństwo i logika
-brak duplikacji wysyłek
-obsługa statusów: new, processing, sent, error
-pełna kontrola z panelu WHMCS
-możliwość ręcznej wysyłki lub pracy automatycznej
-Autor
+<ol>
+<li>Faktura w WHMCS → status Paid</li>
+<li>Dodanie do kolejki</li>
+<li>Cron wysyła do KSeF</li>
+<li>Zapis danych (KSeF, XML, UPO)</li>
+</ol>
 
-NETCLOUD24.COM / Łukasz Bodziony
+<hr>
+
+<h2>📊 Statusy</h2>
+
+<ul>
+<li>new</li>
+<li>processing</li>
+<li>sent</li>
+<li>error</li>
+<li>hold</li>
+<li>retry</li>
+</ul>
+
+<hr>
+
+<h2>🔒 Bezpieczeństwo</h2>
+
+<ul>
+<li>brak duplikacji</li>
+<li>kolejka + cron</li>
+<li>kontrola statusów</li>
+</ul>
+
+<hr>
+
+<h2>👨‍💻 Autor</h2>
+
+<p>
+<strong>NETCLOUD24.COM / Łukasz Bodziony</strong><br><br>
+
+👉 <a href="https://netcloud24.com" target="_blank">
+VPS Windows 
+</a>
+</p>
+
+<hr>
+
+<h2>📌 Licencja</h2>
+
+<p>
+Dodaj licencję (MIT / GPL) w repozytorium.
+</p>
