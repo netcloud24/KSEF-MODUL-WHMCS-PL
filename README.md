@@ -185,11 +185,42 @@ System Settings → Addon Modules → Activate
 
 <hr>
 
+<h3>📸 Generowanie tokena KSeF</h3>
+
+<p>
+Poniżej przykład generowania tokena w panelu Ministerstwa Finansów:
+</p>
+
+<p align="center">
+  <img src="https://raw.githubusercontent.com/netcloud24/KSEF-MODUL-WHMCS-PL/main/2.png" width="900">
+</p>
+
+<p align="center">
+  Panel KSeF – generowanie tokena autoryzacyjnego dla API
+</p>
+
+<p>
+Po wygenerowaniu tokenu:
+</p>
+
+<ul>
+<li>skopiuj jego pełną wartość</li>
+<li>wklej do modułu WHMCS</li>
+<li>upewnij się, że tryb (test / production) jest zgodny</li>
+</ul>
+
+<p>
+<strong>Uwaga:</strong> Token jest przypisany do konkretnego NIP i środowiska.
+</p>
+
 <h2>⚙️ Konfiguracja</h2>
+
+https://github.com/netcloud24/KSEF-MODUL-WHMCS-PL/blob/main/2.png
 
 <ul>
 <li>NIP</li>
 <li>Token KSeF</li>
+
 <li>Nazwa firmy</li>
 <li>Adres</li>
 <li>Tryb (test / production)</li>
